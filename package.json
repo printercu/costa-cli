@@ -1,0 +1,25 @@
+{
+  "name": "costa-cli",
+  "version": "0.1.0",
+  "description": "Invoker for costa",
+  "main": "index.js",
+  "preferGlobal": true,
+  "scripts": {
+    "test": "test"
+  },
+  "bin": {
+    "costa": "bin/costa"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/printercu/costa-cli.git"
+  },
+  "keywords": [
+    "costa"
+  ],
+  "author": "Max Melentiev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/printercu/costa-cli/issues"
+  }
+}

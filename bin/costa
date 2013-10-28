@@ -1,5 +1,26 @@
 #!/usr/bin/env node
-var cli_file, find_cli_root, fs, path;
+/*
+fs = require('fs')
+path = require('path')
+
+cli_file = 'node_modules/costa/core/cli.js'
+
+find_cli_root = ->
+  dir = process.cwd()
+  while dir.length > 1
+    return dir if fs.existsSync path.join dir, cli_file
+    dir = path.resolve dir, '../'
+  false
+
+fullpath = if root = find_cli_root()
+  path.join root, cli_file
+else
+  cli_file
+
+require fullpath
+*/
+
+var cli_file, find_cli_root, fs, fullpath, path, root;
 
 fs = require('fs');
 
@@ -19,10 +40,6 @@ find_cli_root = function() {
   return false;
 };
 
-root = find_cli_root();
+fullpath = (root = find_cli_root()) ? path.join(root, cli_file) : cli_file;
 
-if (!root) {
-  require(cli_file);
-}
-
-require(path.join(root, cli_file));
+require(fullpath);
